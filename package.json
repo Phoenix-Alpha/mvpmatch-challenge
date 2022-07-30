@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.5",
+    "@tanstack/react-query": "^4.0.10",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -10,6 +12,8 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "axios": "^0.27.2",
+    "classnames": "2.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -17,10 +21,16 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "npx ts-standard && craco test",
+    "eject": "craco eject",
+    "tsc": "tsc --noEmit",
+    "lint:css": "stylelint src/**/*.scss",
+    "lint:js": "eslint src/**/*.ts src/**/*.tsx",
+    "lint": "npm-run-all --parallel lint:*",
+    "prettier": "prettier --check \"src/**/*.@(tsx|ts|jsx|js)\"",
+    "prettier-fix": "prettier --write \"src/**/*.@(tsx|ts|jsx|js)\""
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +49,37 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "ts-standard": {
+    "ignore": [
+      "craco.config.js",
+      "src/react-app-env.d.ts",
+      "src/reportWebVitals.ts"
+    ]
+  },
+  "devDependencies": {
+    "@types/classnames": "2.2.11",
+    "@types/enzyme": "^3.10.12",
+    "@typescript-eslint/eslint-plugin": "5.8.1",
+    "@typescript-eslint/parser": "5.8.1",
+    "autoprefixer": "^10.4.7",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "eslint": "7.12.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-standard": "16.0.3",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "postcss": "^8.4.14",
+    "prettier": "2.2.1",
+    "sass": "^1.54.0",
+    "stylelint": "13.12.0",
+    "stylelint-config-standard": "21.0.0",
+    "tailwindcss": "^3.1.6",
+    "ts-standard": "^10.0.0",
+    "yarn-run-all": "3.1.1"
   }
 }
