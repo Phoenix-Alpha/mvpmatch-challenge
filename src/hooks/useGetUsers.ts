@@ -1,11 +1,12 @@
-import { useQuery } from "@tanstack/react-query"
+import { useQuery } from '@tanstack/react-query'
 
-import { getUsers } from "@/utils"
+import { MOCK_USERS } from '@/mock-api'
+import { getUsers } from '@/utils'
 
 export const useGetUsers = () => {
-  const { isLoading, isError, data, error } = useQuery(['users'], getUsers)
+  // const { isLoading, isError, data, error } = useQuery(['users'], getUsers)
 
-  console.log(isLoading, isError, data, error)
+  // console.log(isLoading, isError, data, error)
 
-  return []
+  return MOCK_USERS
 }

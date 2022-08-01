@@ -3,7 +3,7 @@ export interface IProject {
   userIds: string[]
   rule: string
   gatewayIds: string[]
-  strucuture: string
+  structure: string
   industry: string
   website: string
   description: string

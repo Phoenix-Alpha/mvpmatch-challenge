@@ -10,10 +10,7 @@ export interface IContainerProps {
 export const Container: FC<IContainerProps> = memo(
   ({ children, className = '', ...props }: IContainerProps) => (
     <div
-      className={classNames(
-        'container px-3 max-w-[1440px] mx-auto',
-        className
-      )}
+      className={classNames('container px-3 max-w-[1440px] mx-auto', className)}
       {...props}
     >
       {children}

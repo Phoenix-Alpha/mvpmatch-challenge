@@ -30,6 +30,7 @@
     "space-before-function-paren": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
     "simple-import-sort/imports": "warn"
   },
   "settings": {

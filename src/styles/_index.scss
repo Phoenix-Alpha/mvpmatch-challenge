@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import '_animation';
+@import '_table';
+@import '_common';

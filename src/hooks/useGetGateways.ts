@@ -1,3 +1,7 @@
+import { MOCK_GATEWAYS } from '@/mock-api'
+
 export const useGetGateways = () => {
-  return []
+  // const { isLoading, isError, data, error } = useQuery(['gateways'], getGateways)
+
+  return MOCK_GATEWAYS
 }
